@@ -1,0 +1,22 @@
+GIT 
+- Một số thao tác cơ bản với Git
++ Cần đăng ký tài khoản Github trước
+- Tạo repository để lưu trữ source code
+- Tạo thư mục trên local:
+C:/php0722e_git/
+               /manhnv.txt:  có nội dung bất kỳ
+               /test.docx: có nội dung bất kỳ 
+- Chạy lần lượt các lệnh sau để đẩy code từ local lên
+repo:
++ git init   : khởi tạo git trên thư mục hiện tại
++ git status: kiểm tra trạng thái (thêm sửa xóa) 
+file/thư mục
++ git add abc.txt : add file abc.txt cho git quản lý
+git add .  :add toàn bộ các file đang thay đổi
++ git commit -m "first commit by manhnv"  : commit lại
+các thay đổi để chuẩn bị cho bước push code
++ Liên kết link repo vào local:
+git remote add origin https://github.com/nguyenvietmanhit/php0722e_git.git
+git remote -v: ktra lại link repo đang gắn với local
++ git push origin master: đẩy các file/thư mục đã commit
+lên nhánh master của repo 
