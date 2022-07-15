@@ -1,5 +1,5 @@
 GIT 
-- Một số thao tác cơ bản với Git
+1/ Một số thao tác cơ bản với Git
 + Cần đăng ký tài khoản Github trước
 - Tạo repository để lưu trữ source code
 - Tạo thư mục trên local:
@@ -20,3 +20,18 @@ git remote add origin https://github.com/nguyenvietmanhit/php0722e_git.git
 git remote -v: ktra lại link repo đang gắn với local
 + git push origin master: đẩy các file/thư mục đã commit
 lên nhánh master của repo 
++ git add, git commit, git push
+
+- Lấy source code từ link git của người khác:
+git clone <url-git>
+
+git clone https://github.com/nguyenvietmanhit/php0722e.git
+
+- Cập nhật thay đổi mới nhất từ repo về local, với điều
+kiện đã clone rồi:
+git pull origin master
+
+2/ Demo code nhóm:
+- Trưởng nhóm tạo 1 repo trước, đẩy source code đầu tiên lên
+- Add thành viên nhóm: Setting - Collaborator -> Add people
+- Các thành viên sẽ clone source về máy
