@@ -1,0 +1,7 @@
+git.txt
+- LÀ công cụ giúp quản lý source code (như drive)
+và teamwork
+- Một số thao tác với Git cơ bản:
++ Đẩy code từ local lên git:
+- Truy cập Github và tạo tài khoảngfhghgfhgf
+
