@@ -1,0 +1,109 @@
+<!-- js_basic_2.html -->
+<script>
+	// 1 - Câu lệnh điều kiện: if, else, elseif, switch,
+	// case, chỉ thực hiện logic khi biểu thức điều kiện là true
+	// + Câu lệnh if: chỉ kiểm tra 1 trường hợp duy nhất
+	var number = 5;
+	if (number > 0) {
+		console.log('Biến number > 0');
+	}
+	if (number != 5) {
+		console.log('done?');
+	}
+	// + Câu lệnh if else: kiểm tra 2 trường hợp:
+	var number = 1;
+	if (number > 0) {
+		console.log('Biến number > 0');
+	} else {
+		console.log('Biến number <= 0');
+	}
+	// + Câu lệnh if elseif else: kiểm tra >= 3 trường hợp
+	// Phân loại học sinh dựa vào điểm: giỏi, khá, tb, yếu
+	var point = 5;
+	if (point >= 8 && point <= 10) {
+		console.log('Giỏi');
+	} else if (point >= 6.5 && point < 8) {
+		console.log('Khá');
+	} else if (point >= 5 && point < 6.5) {
+		console.log('TB')
+	} else {
+		console.log('Yếu');
+	}
+	// - Toán tử điều kiện: ?: là cú pháp viết tắt của câu lệnh if else
+	var number = 5;
+	if (number % 2 == 0) {
+		var str = 'số chẵn';
+	} else {
+		var str = 'số lẻ';
+	}
+	console.log(str);
+
+	var str = number % 2 == 0 ? 'số chẵn' : 'số lẻ';
+	console.log(str);
+	// + Biểu thức switch case:
+	// If elseif
+	var day = 2;
+	if (day == 2) {
+		console.log('Thứ hai');
+	} else if (day == 3) {
+		console.log('Thứ ba');
+	} else if (day == 4) {
+		console.log('Thứ tư');
+	} else {
+		console.log('Ko phải thứ 2, 3, 4');
+	}
+	//Switch case:
+	var day = 3;
+	switch (day) {
+		case 2: console.log('Thứ hai');break;
+		case 3: console.log('Thứ ba');break;
+		case 4: console.log('Thứ tư');break;
+		default: console.log('Ko phải thứ 2, 3, 4');
+	}
+	// Switch case dễ đọc code hơn if elseif, tuy nhiên
+	//chỉ đc sử dụng với so sánh bằng
+
+	// 2 - Vòng lặp
+	// + Thực thi logic code nhiều lần
+	// VD: log ra 500 lần chuỗi '500 anh em'
+	// for, while, do...while
+	// - for: vòng lặp xác định trc số lần lặp
+	for (var i = 1; i <= 10; i++) {
+		console.log(i); //123456789
+		console.log('<br>');
+	}
+	// - while: vòng lặp ko xác định trc số lần lặp
+	var j = 1;
+	while (j <= 10) {
+		console.log(j);//12345678910
+		j++;
+	}
+	// - do while: giống while, tuy nhiên chạy ít nhất 1 lần ngay cả khi điều kiện sai ngay từ đầu
+	var z = 1;
+	do {
+		console.log('Test do while');
+	} while (z < 0);
+
+	// 3 - Từ khóa break, continue trong vòng lặp
+	// - Break: thoát hẳn vòng lặp, đồng thời ko chạy code phía sau break
+	console.log('<br>');
+
+	for (var i = 1; i <= 10; i++) {
+		if (i == 2) {
+			break;
+		}
+		console.log(i); 
+	}
+	//1
+	// - Continue: bỏ qua lần lặp hiện tại (ko chạy code phía sau continue), nhảy tới lần lặp kế tiếp
+	for (j = 1; j <= 10; j++) {
+		console.log(j);
+		if(j <= 10) {
+			continue;
+		}
+	}
+	//78910
+	//
+
+	//1235678910
+</script>

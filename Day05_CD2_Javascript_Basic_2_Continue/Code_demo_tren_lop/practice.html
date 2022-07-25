@@ -1,0 +1,63 @@
+<!-- practice.html -->
+<script>
+	//1 - Viết hàm kiểm tra số chẵn lẻ:
+	// + Xác định tham số: 1 tham số
+	// + Xác định giá trị trả về: boolean
+	function isEven(number) {
+		//C1
+		 var is_even = false;
+		 if (number % 2 == 0) {
+		 	is_even = true;
+		 }
+		 return is_even;
+		//C2 
+		// if (number % 2 == 0) {
+		// 	return true; //return 'Là số chẵn'
+		// } 
+		// return false; //return 'Là số lẻ'
+	}
+	var test1 = isEven(13);
+	console.log(test1); //false
+
+	// - Viết hàm kiểm tra số nguyên tố
+	// + Tham số: 1 tham số
+	// + Giá trị trả về: boolean
+	function isPrime(number) {
+		// Mặc định là số nguyên tố
+		var is_prime = true;
+		for (i = 2; i <= Math.sqrt(number); i++) {
+			if (number % i == 0) {
+				is_prime = false;
+				// Sau khi xác định đc ko phải số ngto, thì thoát vòng lặp
+				break;
+			}
+		}
+		return is_prime;
+	}
+	console.log(isPrime(9)); //
+	console.log(isPrime(11)); //
+
+
+	// - Viết hàm tính toán 2 số bất kỳ dựa vào phép tính cho trước là cộng trừ nhân chia
+	// + Xđ tham số: 2 tham số là 2 số bất kỳ, 1 tham số là phép tính
+	// + Kết quả trả về: number
+	function calculation(number1, number2, operator) {
+		// number1 = parseInt(number1)
+		var result = 0;
+		switch (operator) {
+			case '+': result = number1 + number2;break;
+			case '-': result = number1 - number2;break;
+			case '*': result = number1 * number2;break;
+			case '/': 
+				if (number2 != 0) {
+					result = number1 / number2;
+				} else {
+					console.log('Ko thể chia cho 0');
+					return;
+				}
+		}
+		return result;
+	}
+	var result1 = calculation(3, 1, '/');
+	console.log(result1);
+</script>
