@@ -1,0 +1,143 @@
+<!-- css_demo_1.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS căn bản phần 1</title>
+	<!-- Nhúng file .css trong thẻ head -->
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<!-- 
+	CSS:
+	1 - Định nghĩa
+	- Là ngôn ngữ trang trí cho HTML
+	- Cascading Style Sheet
+	- CSS giúp tạo ra các trang web có tính thẩm mỹ và
+	responsive web - hiển thị tương thích với nhiều thiết bị
+	- Thư viện thông nhất của CSS: Bootstrap
+	2 - Cú pháp khai báo
+	selector {
+		property: value;
+	}
+	3 - Selector CSS là gì?
+	+ Là đối tượng bị chịu tác động bởi CSS
+	+ Các selector cơ bản:
+	- Tên thẻ
+	 -->
+	 <style type="text/css">
+	 	/*
+		3 - Selector CSS là gì?
+		+ Là đối tượng bị chịu tác động bởi CSS
+		+ Các selector cơ bản:
+		- Select theo tên thẻ
+	 	*/
+	 	h4 {
+	 		color: blue;
+	 	}
+	 	/* - Selector theo thuộc tính id và class của thẻ */
+	 	/*Selector theo id: duy nhất*/
+	 	#p-id {
+	 		color:  yellow;
+	 	}
+	 	/*Selector theo class: sử dụng lại*/
+	 	.p-class {
+	 		color: pink;
+	 	}
+	 	/*- Selector theo cấp */
+	 	div a {
+	 		background: red;
+	 	}
+	 	/*- Selector theo thuộc tính thẻ: */
+	 	input[type=text] {
+	 		background: green;
+	 	}
+	 	form input[type=email] {
+	 		background: orange;
+	 	}
+	 	/* - Selector theo trạng thái */
+	 	/*+ hover: rê chuột qua selector*/
+	 	#h2-id:hover {
+	 		color:  red;
+	 	}
+	 	/*+ Vị trí trong cấp cha con trực tiếp*/
+	 	ul li:first-child {
+	 		background: red;
+	 	}
+	 	ul li:last-child {
+	 		background: yellow;
+	 	}
+	 	ul li:nth-child(2) {
+	 		background: green;
+	 	}
+	 	ul li:nth-child(3) {
+	 		background: black;
+	 	}
+	 	/*+ Trạng thái trước/sau của selector */
+	 	#a-id:before {
+	 		content: "Text trước thẻ a";
+	 	}
+	 	#a-id:after {
+	 		content: "Text sau thẻ a";
+	 	}
+
+	 	/*3 - Các phương pháp khai báo code CSS: 3 phương pháp*/
+	 	/* - Khai báo CSS inline trong thẻ HTML, sử dụng thuộc tính style của thẻ, ko ưu tiên vì phức tạp và code ko có tính sử dụng lại */
+	 	/* - Khai báo CSS inline trong file HTML, sử dụng thẻ style:  code dễ đọc hơn vì tách biệt với HTML, nhược điểm là ko có tính sử dụng lại giữa các file*/
+	 	/* - Sử dụng file .css: tách biệt code và có tính sử dụng lại trên toàn trang, cần liên kết file css vào */
+	 	/* Tạo cấu trúc file như sau:
+		css_demo_1.html
+		css/ style.css
+
+	 	 */
+	 </style>
+	 <style type="text/css">
+	 	/*code css...*/
+	 </style>
+
+	 <b style="color: red">Thẻ b</b>
+	 <b style="color: red">Thẻ b</b>
+
+	 <a href="#" id="a-id">Thẻ a ban đầu</a>
+
+	 <ul>
+	 	<li>Li thứ nhất</li>
+	 	<li>Li thứ hai</li>
+	 	<li>Li thứ ba</li>
+	 	<li>Li thứ tư</li>
+	 </ul>
+
+	 <h2 id="h2-id">Rê chuột qua h2 để đổi màu text</h2>
+
+	 <form>
+	 	Nhập tên
+	 	<input type="text">
+	 	<br>
+	 	Nhập số:
+	 	<input type="number">
+	 	<br>
+	 	Nhập email
+	 	<input type="email">
+	 </form>
+
+	 <div>
+	 	<a href="#" >Link bên trong div</a>
+	 	<p>
+	 		<a href="#">Link bên trong p</a>
+	 	</p>
+	 </div>
+	 <a href="#">Link bên ngoài div</a>
+
+	 <p id="p-id">Thẻ p id</p>
+	 <p class="p-class">Thẻ p class</p>
+	 <p class="p-class">Thẻ p class thứ hai</p>
+	 <p class="p-class p1 p2 p3">Thẻ p class thứ 3</p>
+	 <p id="pid1" class="pclass1">Thẻ p cả id, class</p>
+
+     <h4>Thẻ h4 1</h4>
+	 <h4>Thẻ h4 2</h4>
+	
+	<h1 style="color: red">Thẻ h1</h1>
+</body>
+</html>
