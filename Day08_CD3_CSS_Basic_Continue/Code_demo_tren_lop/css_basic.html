@@ -1,0 +1,165 @@
+<!-- css_basic.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Demo CSS cơ bản</title>
+
+</head>
+<body>
+	<style type="text/css">
+		/* - Background: màu nền */
+		#p-bg {
+			/*Màu trong CSS có 2 dạng cơ bản:  đơn sắc (English) và màu trộn (hecxa)*/
+			/*background-color: #F9B638;*/
+			/*Copy 1 ảnh bất kỳ ngang hàng file hiện tại*/
+			height: 200px;
+		    /*background-image: url(avatar.jpg);*/
+		    /*background-repeat: no-repeat;*/
+		    /*background-position: center;*/
+		    background-size: cover;
+		    /*CSS gộp: */
+		    background: #F9B638 url(avatar.jpg) no-repeat center;
+		}
+
+		/* - Font chữ */
+		#span-font {
+			/*Font family đến từ font đang có trên hệ thống C:/Windows/Fonts*/
+	        font-family: Arial;
+		    font-style: italic;
+		    font-weight: bold;
+		    font-size: 20px;
+		}
+		/* - Text */
+		.p-text {
+		    color: red;
+		    background: yellow;
+		    text-align: center;
+		    text-decoration: underline;
+		    text-transform: uppercase;
+		    text-shadow: 3px 2px 5px blue;
+		    line-height: 30px;
+		}
+		/* - Border: viền */
+		#div-border {
+		    /*border-color: red;*/
+		    /*border-style: solid;*/
+		    /*border-width: 5px;*/
+		    border-radius: 10px;
+		    /*Viết gộp:
+		    */
+		    border: 5px solid red;
+		}
+
+		/* - Margin: khoảng cách giữa các selector liền kề nhau */
+		#div-mg-1 {
+			background: red;
+		}
+		#div-mg-2 {
+			background: yellow;
+			margin-top: 20px;
+		    margin-bottom: 10px;
+		    margin-left: 20px;
+		    margin-right: 40px;
+		    /*Viết gộp: */
+		    /*+ 4 giá trị:  top right bottom left;*/
+		    margin:  20px 40px 10px 20px;
+		    /*+ 2 giá trị: top-bottom left-right*/
+		    margin: 5px 6px;
+		    /*+ 1 giá trị: top-bottom-left-right*/
+		    margin: 15px;
+		}
+		/* - Padding: khoảng cách tính từ viền của selector đến nội dung bên trong cuả nó */
+		#div-padding {
+			border: 1px solid gray;
+			padding-top: 20px;
+		    padding-left: 10px;
+		    padding-bottom: 20px;
+		    padding-right: 30px;
+		    /*CSS gộp giống hệt margin:  padding*/
+		}
+		/* - Width - height: set kích thước */
+		#div-wh {
+		    background: red;
+		    width: 200px;
+		    height: 50px;
+		    /* min-width: 100px; */
+		    /* max-width: 200px; */
+		}
+		/* - Position: set vị trí, có 3 giá trị: fixed, relative, absolute */
+		/*Position dùng khi muốn di chuyển 1 selector mà ko ảnh hưởng đến các selector xung quanh*/
+		/*Tưởng tưởng đứng từ trên cao nhìn xuống, nhìn thấy position trước r mới tới các phần tử HTML bình thường*/
+		body {
+			height: 1000px;
+		}
+		/*Fixed: Hiển thị cố định, lấy 4 cạnh trình duyệt để di chuyển*/
+		#pos-fixed {
+			background: yellow;
+			width: 100px;
+			height: 100px;
+			position: fixed;
+		    top: 20px;
+		    bottom: 30px;
+		    right: 0;
+		}
+		/*Relative: vị trí tương đối: lấy vị trí hiện tại của chính nó để di chuyển*/
+		#pos-relative {
+			background: pink;
+			width: 150px;
+			height: 150px;
+			position: relative;
+    		right: -500px;
+		}
+		/*Absolute: vị trí tuyệt đối*/
+		#pos-absolute {
+			background: green;
+			width: 100px;
+			height: 100px;
+			position: relative;
+    		right: 15px;
+		}
+		#div-parent {
+			width: 200px;
+			height: 200px;
+			background: purple;
+			position: relative;
+		}
+		/*Absolute cần di chuyển bên trong thành phần ra là relative*/
+		/* - Overflow: xác định hiển thị 1 phần tử HTML bị tràn text */
+		div#div-overflow {
+		    border: 1px solid red;
+		    width: 100px;
+		    overflow: hidden;
+		    /* Opacity: độ mờ 0 - 1 */
+		    opacity: 0.5;
+		}
+	</style>
+
+	<div id="div-overflow">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+
+	<div id="div-parent">
+		<div id="pos-absolute">CSS Pos absolute</div>
+	</div>
+
+	<div id="pos-relative">CSS Position relative</div>
+
+	<div id="pos-fixed">CSS Position fixed</div>
+
+	<div id="div-wh">CSS Width Height</div>
+
+	<div id="div-padding">CSS Padding</div>
+
+	<div id="div-mg-1">CSS Margin 1</div>
+	<div id="div-mg-2">CSS Margin 2</div>
+
+	<div id="div-border">CSS Border</div>
+
+	<p class="p-text">CSS Text</p>
+
+	<span id="span-font">CSS Font</span>
+
+	<p id="p-bg">CSS background</p>
+
+</body>
+</html>
