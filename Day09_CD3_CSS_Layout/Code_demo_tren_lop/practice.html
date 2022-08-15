@@ -1,0 +1,99 @@
+<!-- practice.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Thực hành dựng layout với flex và grid</title>
+</head>
+<body>
+	<h1>Layout với Flex</h1>
+	<!-- 
+	- Các bước dựng layout web:
+	+ Code HTML trước: cần phần tích trang web để xác định xem có thành phần nào đang có cấu trúc layout dạng 1 hàng nhiều cột để áp dụng HTML phù hợp
+	+ Code CSS
+	 -->
+	 <style>
+	 	.container {
+		    /* background: red; */
+		    max-width: 60%;
+		    margin: auto;
+		}
+
+		.logo {
+		    text-align: center;
+		    background: #EFEFEF;
+		    padding: 5px 0;
+		    font-size: 25px;
+		    font-weight: bold;
+		}
+
+		.nav {
+		    background: #efefef;
+		    margin-top: 5px;
+		    padding: 10px 0;
+    		text-align: center;
+		}
+
+		ul {
+		    margin: 0;
+		    list-style: none;
+		}
+
+		li {
+		    display: inline-block;
+		    margin: 0 10px;
+		}
+
+		a {
+		    color: #552191;
+		}
+
+		.feature {
+		    background: #efefef;
+		    margin-top: 20px;
+		    text-align: center;
+		    height: 100px;
+		}
+
+		.row {
+		    display: flex;
+		    /*Set khoảng cách các column trong flex*/
+		    column-gap: 20px;
+		}
+
+		.item {
+		    background: #efefef;
+		    width: 33.33%;
+		    height: 50px;
+		    text-align: center;
+		}
+
+		.columns {
+		    margin-top: 10px;
+		}
+	 </style>
+	<div class="container">
+		<header class="logo">Logo</header>
+		<nav class="nav">
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Products</a></li>
+				<li><a href="#">Services</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+		<section class="feature">Feature</section>
+		<section class="columns">
+			<!-- Dựng cấu trúc HTML sau cho layout -->
+			<div class="row">
+				<div class="item">Column one</div>
+				<div class="item">Column two</div>
+				<div class="item">Column three</div>
+			</div>
+		</section>
+		<footer class="footer">&copy; Copyright 2011</footer>
+	</div>
+</body>
+</html>

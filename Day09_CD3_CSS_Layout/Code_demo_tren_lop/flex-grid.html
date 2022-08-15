@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Demo flex</title>
+	<style>
+		.container {
+		    display: flex;
+		    flex-direction: column;
+		    max-width: 30%;
+		    margin: auto;
+		        row-gap: 10px;
+		}
+
+		.bg {
+		    background: yellow;
+		}
+
+		section.main {
+    display: flex;
+    min-height: 300px;
+    column-gap: 10px;
+}
+
+header.bg {
+    min-height: 60px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+nav.bg {
+    flex-grow: 1;
+}
+
+.body {
+    flex-grow: 3;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.article-ads {
+    display: flex;
+    column-gap: 10px;
+    height: 100%;
+}
+section.article.bg {
+    flex: 3;
+}
+section.ads.bg {
+    flex: 1;
+}
+footer.bg {
+    min-height: 50px;
+}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<header class="bg">Header</header>
+		<section class="main">
+			<nav class="bg">Nav</nav>
+			<div class="body">
+				<div class="article-ads">
+					<section class="article bg">Article</section>
+					<section class="ads bg">Ads</section>
+				</div>
+				<footer class="bg">Footer</footer>
+			</div>
+		</section>
+	</div>
+</body>
+</html>

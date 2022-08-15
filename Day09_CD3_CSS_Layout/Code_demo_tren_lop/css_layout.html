@@ -1,0 +1,127 @@
+<!-- css_layout.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS Layout</title>
+</head>
+<body>
+	<style>
+		/*
+		1 - Định nghĩa
+		- Layout của web là cấu trúc hàng cột để tạo nên bố cúc/cấu trúc 1 trang web
+		- Để dựng layout web có nhiều kỹ thuật: ;
+		+ Cấu trúc table:  ko nên dùng
+		+ CSS position:  ko dùng;
+		+ CSS float:  có thể dùng nhưng ko ưu tiên;
+		+ CSS Flex:  ưu tiên sau Grid;
+		+ CSS Grid:  ưu tiên nhất;
+		2 - Học Float, Flex và Grid để dựng layout
+		3 - Thành phần inline và block
+		+ block:  chiếm hết width của hàng hiện tại, nên ko đứng cùng hàng đc với các thẻ khác. VD: div p h1 ... h6;
+		+ inline: width chiếm vừa đủ nội dung của thẻ, nên đứng chung đc với các thẻ inline khác. VD:  a span b i u ...;
+		- Chuyển đổi kiểu hiển thị bằng css display
+		*/
+		/*div {background: red;}
+		a {background: yellow;}
+		span {background: blue;}*/
+		li {
+			/*Nên dùng inline-block thay cho inline để có thể margin trên dưới đc*/
+		    display: inline-block;
+		    margin-right: 20px;
+		    margin-top: 10px;
+		}
+		/*4 - CSS Float:  dựng layout*/
+		/*Cách dựng: float left các cột, sau đó set width tương ứng*/
+		/*Float có thể vỡ layout nếu tổng width trên 1 hàng > 100%, ngoài ra có thể ảnh hưởng đến phần tử ko phải float ngay phía sau nó
+		*/
+		.main1 {
+			/*Bỏ ảnh hưởng của float đến phần tử ngay sau nó*/
+			overflow: auto;
+			/*clear: both;*/
+		}
+		.div1 {
+			background: red;
+			float: left;
+    		width: 33.33%;
+		}
+		.div2 {
+			background: green;
+			float: left;
+    		width: 33.33%;
+		}
+		.div3 {
+			float: left;
+    		width: 33.33%;
+			background: blue;
+		}
+		/*5 - Flex:  dùng layout*/
+		/*Cách dùng: áp dụng display: flex cho thành phần cha, sau đó set width cho từng thành phần con, Kỹ thuật flex chỉ áp dụng với cấu trúc HTML dạng cha con trực tiếp*/
+		/*Dùng flex ko cần fix vỡ giao diện như float vì mặc định flex luôn giữ các cột nằm trên 1 hàng kể cả width của 1 hàng > 100%*/
+		.flex-container {
+			display: flex;
+		}
+		.item1 {
+			background: red;
+			width: 33.33%;
+		}
+		.item2 {
+			background: green;
+			width: 33.33%;
+		}
+		.item3 {
+			background: blue;
+			width: 33.33%;
+		}
+		/*6 - Grid:  chuyên dùng dựng layout*/
+		/*Cách dùng:  áp dụng display: grid cho thành phần cha, set width cho từng cột bên trong tại thành phần cha
+		Chú ý: tổng width = 100% nếu ko sẽ bị xô lệch layout*/
+		.grid-container {
+		    display: grid;
+		    grid-template-columns: 33.33% 33.33% 33.33%;
+		}
+		.grid1 {
+			background: pink;
+		}
+		.grid2 {
+			background: yellow;
+		}
+		.grid3 {
+			background: orange;
+		}
+		/*Flex-Grid: 
+		- Flex nên dùng cho các layout 1 chiều, ngược lai Grid phù hợp với layout đa chiều
+		*/
+	</style>
+	<div class="grid-container">
+		<div class="grid-item grid1">Grid item 1</div>
+		<div class="grid-item grid2">Grid item 2</div>
+		<div class="grid-item grid3">Grid item 3</div>
+	</div>
+
+
+	<div class="flex-container">
+		<div class="flex-item item1">Flex item 1</div>
+		<div class="flex-item item2">Flex item 2</div>
+		<div class="flex-item item3">Flex item 3</div>
+	</div>
+
+	<div class="main1">
+		<div class="fl div1">Div 1</div>
+		<div class="fl div2">Div 2</div>
+		<div class="fl div3">Div 3</div>
+	</div>
+
+	<ul>
+		<li><a href="#">Link 1</a></li>
+		<li><a href="#">Link 2</a></li>
+		<li><a href="#">Link 3</a></li>
+		<li><a href="#">Link 4</a></li>
+	</ul>
+
+	<div>Thẻ div</div> 
+	<a>Thẻ a1</a>
+	<span>Thẻ span</span>
+</body>
+</html>
