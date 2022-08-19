@@ -20,6 +20,7 @@
 		    margin: auto;
 			display: grid;
 			grid-template-columns: 33.33%  33.33% 33.33%;
+			column-gap: 10px;
 			grid-template-areas:
 					"header header header"
 					"nav nav nav"
@@ -84,8 +85,17 @@
 			list-style: none;
 		}
 
+		section.item.bg {
+			min-height: 50px;
+			text-align: center;
+		}
+
+		.heading {
+			text-align: center;
+		}
 	 </style>
 <!--Grid ko hoạt động trên IE-->
+	<h1 class="heading">Layout với Grid</h1>
 	<div class="container">
 		<header class="header bg">Logo</header>
 		<nav class="bg">
@@ -98,9 +108,9 @@
 			</ul>
 		</nav>
 		<section class="feature bg">Feature</section>
-		<section class="item1 bg">Column one</section>
-		<section class="item2 bg">Column two</section>
-		<section class="item3 bg">Column three</section>
+		<section class="item bg">Column one</section>
+		<section class="item bg">Column two</section>
+		<section class="item bg">Column three</section>
 		<footer class="footer bg">
 			&copy; Copyright 2011
 		</footer>

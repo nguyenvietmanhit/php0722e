@@ -7,7 +7,7 @@
 	<title>Thực hành dựng layout với flex và grid</title>
 </head>
 <body>
-	<h1>Layout với Flex</h1>
+
 	<!-- 
 	- Các bước dựng layout web:
 	+ Code HTML trước: cần phần tích trang web để xác định xem có thành phần nào đang có cấu trúc layout dạng 1 hàng nhiều cột để áp dụng HTML phù hợp
@@ -22,14 +22,12 @@
 
 		.logo {
 		    text-align: center;
-		    background: #EFEFEF;
 		    padding: 5px 0;
 		    font-size: 25px;
 		    font-weight: bold;
 		}
 
 		.nav {
-		    background: #efefef;
 		    margin-top: 5px;
 		    padding: 10px 0;
     		text-align: center;
@@ -50,7 +48,6 @@
 		}
 
 		.feature {
-		    background: #efefef;
 		    margin-top: 20px;
 		    text-align: center;
 		    height: 100px;
@@ -63,7 +60,6 @@
 		}
 
 		.item {
-		    background: #efefef;
 		    width: 33.33%;
 		    height: 50px;
 		    text-align: center;
@@ -72,11 +68,30 @@
 		.columns {
 		    margin-top: 10px;
 		}
+
+		.footer {
+			margin-top: 10px;
+			padding: 10px 0;
+			text-align: center;
+		}
+
+		.bg {
+			background: #efefef;
+		}
+
+		.heading {
+			text-align: center;
+		}
 	 </style>
+	<ul style="background: red">
+		<li>11</li>
+		<li>22</li>
+	</ul>
+	<h1 class="heading">Layout với Flex</h1>
 	<!--Flex có hoạt động trên IE-->
 	<div class="container">
-		<header class="logo">Logo</header>
-		<nav class="nav">
+		<header class="logo bg">Logo</header>
+		<nav class="nav bg">
 			<ul>
 				<li><a href="#">Home</a></li>
 				<li><a href="#">Products</a></li>
@@ -85,16 +100,16 @@
 				<li><a href="#">Contact</a></li>
 			</ul>
 		</nav>
-		<section class="feature">Feature</section>
+		<section class="feature bg">Feature</section>
 		<section class="columns">
 			<!-- Dựng cấu trúc HTML sau cho layout -->
 			<div class="row">
-				<div class="item">Column one</div>
-				<div class="item">Column two</div>
-				<div class="item">Column three</div>
+				<div class="item bg">Column one</div>
+				<div class="item bg">Column two</div>
+				<div class="item bg">Column three</div>
 			</div>
 		</section>
-		<footer class="footer">&copy; Copyright 2011</footer>
+		<footer class="footer bg">&copy; Copyright 2011</footer>
 	</div>
 </body>
 </html>
