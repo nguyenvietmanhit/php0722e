@@ -1,0 +1,40 @@
+<!-- bt4_day_09.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Chữa bt4 ngày 09</title>
+</head>
+<body>
+	<style>
+		.border {
+			border: 1px solid blue;
+		}
+
+		.container {
+		    display: grid;
+		    grid-template-columns: 1fr 1fr 1fr;
+		    grid-column-gap: 5px;
+		    grid-row-gap: 10px;
+		    grid-template-areas:
+		        "header header header"
+		        "menu sometext sometext"
+		        "menu image moretext";
+		}
+		header.border {grid-area: header;}
+		nav.border {grid-area: menu;}
+		.sometext {grid-area: sometext;}
+		.image {grid-area: image;}
+		.moretext {grid-area: moretext;}
+	</style>
+	<!-- Chia layout thành 3 cột có độ rộng = nhau -->
+	<div class="container">
+		<header class="border">This is a header</header>
+		<nav class="border">Menu</nav>
+		<section class="sometext border">Some text</section>
+		<section class="image border">An image</section>
+		<section class="moretext border">More text</section>
+	</div>
+</body>
+</html>
