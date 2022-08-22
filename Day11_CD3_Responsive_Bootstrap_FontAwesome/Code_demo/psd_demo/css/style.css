@@ -4,3 +4,13 @@
 	font-family: 'Pacifico-Regular';
 	src:  url(../fonts/Pacifico-Regular.ttf);
 }
+
+.container {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+    grid-template-areas:
+        "left logo menu menu right"
+        "left article image image right"
+        "left item1 item2 item3 right"
+        "left post about stay right";
+}

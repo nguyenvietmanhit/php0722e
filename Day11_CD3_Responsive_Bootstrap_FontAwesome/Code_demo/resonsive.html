@@ -1,0 +1,37 @@
+<!-- resonsive.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!-- Là thẻ bắt buộc để trang có thể repsonsive chính xác theo từng thiết bị -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Responsive</title>
+</head>
+<body>
+	<!-- 
+	- Thiết kế web responsive: thiết kế web hiển thị tương thích với các thiết bị
+	- Sử dụng CSS để responsive\
+	+ Cách giả lập thiết bị trên trình duyệt
+	+ Sử css @media để responsive trên từng thiết bị:
+	+ Dựa vào width để phân loại từng thiết bị:
+	pc: min-width: 1024px
+	ipad/table: min-width: 768px và max-width: 1023px
+	mobile: max-width: 767px
+	 -->
+	 <style>
+	 	/*Luôn luôn code PC đầu tiên*/
+	 	h1 {color: red;}
+	 	/*Code CSS responsive theo thứ tự sau:  PC -> Ipad -> Mobile*/
+	 	/*CSS Ipad*/
+	 	@media(min-width: 768px) and (max-width: 1023px) {
+	 		h1 {color: yellow;}
+	 	}
+	 	/*CSS Mobile*/
+	 	@media(max-width: 767px) {
+	 		h1 {color: green;}
+	 	}
+	 </style>
+	 <h1>Đổi màu trên từng thiết bị PC, Ipad/Tablet/Mobile</h1>
+
+</body>
+</html>
