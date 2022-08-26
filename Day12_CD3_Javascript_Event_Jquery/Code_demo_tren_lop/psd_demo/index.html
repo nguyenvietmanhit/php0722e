@@ -7,8 +7,116 @@
 	<!-- Nhúng file css -->
 	<link rel="stylesheet" href="css/style.css">
 	<title>Cắt giao diện bt1</title>
+	<style>
+		.header {
+		    background: #2F2F2F;
+		    padding: 5px 0;
+		}
+
+		.container {
+		    max-width: 70%;
+		    margin: auto;
+		}
+
+		.row {
+		    display: flex;
+		}
+
+		.logo, .menu {
+			width: 50%;
+		}
+
+		.article {
+		    background: #F1F1F1;
+		    padding: 20px 0;
+		}
+
+		.content {
+		    width: 40%;
+		}
+		.image {
+			width: 60%;
+		}
+
+		.item {
+		    padding: 20px 0;
+		}
+
+		.item .row {
+			column-gap: 20px;
+		}
+
+		.common {
+			width: 33.33%;
+			background: red;
+		}
+		/*Responsive với Flex*/
+		@media(max-width: 767px) {
+			.row {
+				/*Bỏ tính chất mặc định của flex là luôn giữ các cột trên 1 hàng kể cả width > 100%*/
+				flex-wrap: wrap;
+			}	
+			.content, .image {
+				width: 100%;
+			}
+		}
+	</style>
 </head>
 <body>
-	<h1>Bloom</h1>
+	<!-- Dựng layout với Flex: 1 chiều:
+	- Dựng HTML trước, đi theo từng row của giao diện mẫu, nếu hàng đó có cấu trúc layout (>=  2 cột) -> áp dụng row-col
+	 -->
+	 <div class="container-full">
+	 	<!-- HEADER -->
+	 	<header class="header">
+	 		<div class="container">
+	 			<!-- Layout 1 hàng 2 cột -->
+	 			<div class="row">
+	 				<div class="logo">Bloom</div>
+	 				<div class="menu">
+	 					<ul>
+	 						<li><a href="#">Link1</a></li>
+	 						<li><a href="#">Link2</a></li>
+	 					</ul>
+	 				</div>
+	 			</div>
+	 		</div>
+	 	</header>
+	 	<!-- /END HEADER -->
+
+	 	<!--ARTICLE -->
+	 	<section class="article">
+	 		<div class="container">
+	 			<!-- Layout 1 hàng 2 cột -->
+	 			<div class="row">
+	 				<div class="content">Content</div>
+	 				<div class="image">Image</div>
+	 			</div>
+	 		</div>
+	 	</section>
+	 	<!-- /END ARTICLE -->
+
+	 	<!-- ITEM -->
+	 	<section class="item">
+	 		<div class="container">
+	 			<h2>This is a heading</h2>
+	 			<!-- Layout 1 hàng 3 cột -->
+	 			<div class="row">
+	 				<div class="common">Item 1</div>
+	 				<div class="common">Item 2</div>
+	 				<div class="common">Item 3</div>
+	 			</div>
+	 		</div>
+	 	</section>
+	 	<!-- /END ITEM -->
+
+	 	<!-- FOOTER -->
+	 	<footer class="footer">
+	 		<div class="container">
+	 			Footer
+	 		</div>
+	 	</footer>
+	 	<!-- /END FOOTER -->
+	 </div>
 </body>
 </html>
