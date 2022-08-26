@@ -1,8 +1,8 @@
 /*css/style.css*/
 /*Code nhúng font từ bên ngoài*/
 @font-face {
-	font-family: 'Pacifico-Regular';
-	src:  url(../fonts/Pacifico-Regular.ttf);
+    font-family: 'Pacifico-Regular';
+    src: url(../fonts/Pacifico-Regular.ttf);
 }
 
 .container {
@@ -13,4 +13,33 @@
         "left article image image right"
         "left item1 item2 item3 right"
         "left post about stay right";
+}
+
+.main-image {
+    grid-area: image;
+}
+
+.latest-posts {
+    grid-area: post;
+}
+
+.article {
+    grid-area: article;
+}
+
+
+.left {
+    grid-area: left;
+}
+
+.right {
+    grid-area: right;
+}
+
+.menu {
+    grid-area: menu;
+}
+
+.logo {
+    grid-area: logo;
 }
