@@ -1,0 +1,77 @@
+<!-- demo_jquery.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Demo jQuery</title>
+	<!-- Tích hợp jQuery sử dụng link CDN: link cdn jquery, min = minimize -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+	<!-- 
+	- jQuery là thư viện viết bằng JS, giúp thao tác với JS dễ hơn 
+	- jQuery rất phổ biến trong web PHP
+	 -->
+	 <script>
+	 	// - jQuery đặc trưng bởi ký tự $ ở phía trc
+	 	// document.ready tương đương với sự kiện onload //của JS: code JS luôn luôn chạy ko qtrong đứng trước hay sau HTML
+	 	$(document).ready(function() {
+	 		// alert('jQuery đã tích hợp thành công');
+	 	})
+	 </script>
+
+
+	 <script>
+	 	$(document).ready(function() {
+	 		// Xử lý form
+	 		// - Lấy đối tượng form và gắn sự kiện submit
+	 		var obj_form = $('#form');
+	 		// obj lấy bằng jquery sẽ khác obj lấy bằng JS thuần -> ko sử dụng chung hàm đc
+	 		// console.log(obj_form);
+	 		obj_form.submit(function() {
+	 			// alert('Submited')
+	 			// - B1: Tạo biến chứa lỗi và kết quả
+	 			var error = '';
+	 			var result = '';
+	 			// - B2: Lấy giá trị từ form:
+	 			// Tên
+	 			var fullname = $('#fullname').val();
+	 			// Tuổi
+	 			var age = $('#age').val();
+	 			// - B3: Validate form
+	 			if (fullname == '') {
+	 				error = 'Phải nhập tên';
+	 				$('#fullname').focus();
+	 			} else if (fullname.length < 3) {
+	 				error = 'Tên >= 3 ký tự';
+	 				$('#fullname').focus();
+	 			}
+	 			// - B4: Xử lý logic bài toán chỉ khi ko có lỗi:
+	 			if (error == '') {
+	 				result = 'Tên: ' + fullname
+	 				result += '<br> Tuổi: ' + age
+	 			}
+	 			// - B5: Đổ error và result ra form:
+	 			$('#error').html(error); //text()
+	 			$('#result').html(result);
+	 			//Ngăn tải lại trang
+	 			event.preventDefault();
+	 		})
+	 	});
+	 </script>
+
+	 <form id="form">
+		Nhập tên: 
+		<input type="text" id="fullname">
+		<br>
+		Nhập tuổi:
+		<input type="text" id="age">
+		<br>
+		<input type="submit" value="Hiển thị">
+	</form>
+	<h3 id="error" style="color: red"></h3>
+	<h3 id="result" style="color: green"></h3>
+
+</body>
+</html>

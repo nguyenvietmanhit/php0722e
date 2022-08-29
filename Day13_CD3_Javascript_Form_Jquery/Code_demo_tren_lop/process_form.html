@@ -1,0 +1,78 @@
+<!-- process_form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Xử lý form với Javascript</title>
+</head>
+<body>
+
+	<form id="form">
+		Nhập tên: 
+		<input type="text" id="fullname">
+		<br>
+		Nhập tuổi:
+		<input type="text" id="age">
+		<br>
+		<input type="submit" value="Hiển thị">
+	</form>
+	<h3 id="error" style="color: red"></h3>
+	<h3 id="result" style="color: green"></h3>
+	<script>
+		// Các bước xử lý form:
+		// Lấy obj form
+		var obj_form = document.querySelector('#form');
+		// Gắn sự kiện submit
+		obj_form.addEventListener('submit', function() {
+			// - Tạo biến lưu lại lỗi và kết quả:
+			// Tạo luôn 2 thẻ HTML ở trạng thái chờ để đổ dữ liệu của 2 biến này vào
+			var error = '';
+			var result = '';
+			// - Lấy dữ liệu từ form gửi lên sau khi submit
+			// Lấy dữ liệu tên
+			var obj_fullname = document.querySelector('#fullname');
+			var fullname = obj_fullname.value;
+			// console.log(fullname);
+			// Lấy dữ liệu tuổi
+			var obj_age = document.querySelector('#age');
+			var age = obj_age.value;
+			// console.log(age);
+			// - Validate form: kiểm tra dữ liệu đầu vào, giúp ngăn ngừa dữ liệu rác và bảo mật form hơn
+			// Về mặt code, nếu như có lỗi thì đổ thông tin vào biến error
+			// + Tên ko đc để trống
+			// + Tên ít nhất 3 ký tự
+			// + Tuổi ko đc để trống
+			// + Tuổi phải là số 
+			if (fullname == '') {
+				error = 'Tên ko đc để trống';
+				// Focus con trỏ chuột vào input
+				obj_fullname.focus();
+			} else if (fullname.length < 3) {
+				error = 'Tên phải ít nhất 3 ký tự';
+				obj_fullname.focus();
+			} else if (age == '') {
+				error = 'Tuổi ko đc để trống';
+				obj_age.focus();
+			} else if (isNaN(age) == true){
+				//isNaN: ktra có phải số hay ko, true nếu ko phải số và ngược lại (is not a number)
+				error = 'Tuổi phải là số';
+				obj_age.focus();
+			}
+
+			// - Xử lý logic chính của bài toán (hiển thị dữ liệu) chỉ khi ko có lỗi nào xảy ra
+			if (error == '') {
+				result = 'Tên của bạn: ' + fullname;
+				result += '<br>Tuổi của bạn: ' + age;
+			}
+			console.log(error)
+			console.log(result)
+			// - Đổ error và result ra form
+			document.querySelector('#error').innerHTML = error;
+			document.querySelector('#result').innerHTML = result;
+			// Ngăn ngừa hành vi tải lại trang mặc định của form sau khi submit
+			event.preventDefault();
+		})
+	</script>
+</body>
+</html>
