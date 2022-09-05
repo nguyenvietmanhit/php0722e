@@ -1,0 +1,58 @@
+<!--
+	demo_jquery_ui.html
+	+ Giới thiệu về jQuery UI - thư viện về giao diện người dùng, đc viết dựa trên thư viện jQuery
+	+ Là 1 thư viện miễn phí, cung cấp các widget để tiện cho user
+	+ jqueryui.com  - UI - User Interface
+	+ Cách cài đặt thư viện này:
+	Tải thư viện về, nhúng các file sau:
+	- jquery-ui.min.css
+	- jquery-ui.min.js
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo thư viện jQuery UI</title>
+	<!-- Tích hợp css của thư viện jQueryUI -->
+	<link rel="stylesheet" href="css/jquery-ui.min.css" />
+</head>
+<body>
+	<h1>Demo component Datepicker của jQueryUI</h1>
+	<p>Date: <input type="text" id="datepicker"></p>
+
+
+	<!-- Demo 1 input chọn ngày ở dạng mặc định của HTML -->
+	<input type="date" />
+	<!-- Tích hợp jquery và file js của jquery ui -->
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+	<script>
+		//Cách viết dưới tương đương với $(document).ready
+	  $( function() {
+	    $("#datepicker").datepicker();
+	  });
+  </script>
+
+  <h1>Demo dialog</h1>
+
+  <div id="dialog" title="Basic dialog">
+  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+</div>
+  <script>
+  $( function() {
+    $( "#dialog" ).dialog();
+  } );
+  </script>
+
+  	<h1>Demo dragabled</h1>
+  	<div id="draggable" class="ui-widget-content">
+  		<p>Drag me around</p>
+	</div>
+	<script>
+	  $( function() {
+	    $( "#draggable" ).draggable();
+	  } );
+	  </script>
+</body>
+</html>

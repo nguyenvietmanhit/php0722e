@@ -1,0 +1,49 @@
+<!--
+demo_slider_pro.html
++ Demo slideshow sử dụng 1 thư viên của Javascript từ bên thứ 3, dựa trên thư viện jQuery
++ Search gg với từ khóa: jquery slider pro
++ Cần tải thư viện này về tại thư mục slider-pro-master
+ -->
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title>Demo Slider Pro Master</title>
+ 	<!-- Nhúng file css của thư viên: slider-pro.min.css -->
+ 	<link rel="stylesheet" href="slider-pro-master/dist/css/slider-pro.min.css" />
+ </head>
+ <body>
+ 	<!-- Copy mã HTML mà thư viện yêu cầu -->
+ 	<!-- Có thể xem các ví dụ mẫu của slider này tại slider-pro-master/examples -->
+ 	<div class="slider-pro" id="my-slider">
+	<div class="sp-slides">
+		<!-- Slide 1 -->
+		<div class="sp-slide">
+			<img class="sp-image" src="images/hang1.jpg"/>
+		</div>
+		
+		<!-- Slide 2 -->
+		<div class="sp-slide">
+			<p>Lorem ipsum dolor sit amet</p>
+		</div>
+		
+		<!-- Slide 3 -->
+		<div class="sp-slide">
+			<h3 class="sp-layer">Lorem ipsum dolor sit amet</h3>
+			<p class="sp-layer">consectetur adipisicing elit</p>
+		</div>
+	</div>
+</div>
+
+
+ 	<!-- Nhúng thư viện jQuery -->
+ 	<script type="text/javascript" src="slider-pro-master/libs/jquery-1.11.0.min.js"></script>
+ 	<!-- + Nhúng file js sau của thư viện: jquery.sliderPro.min.js -->
+ 	<script type="text/javascript" src="slider-pro-master/dist/js/jquery.sliderPro.min.js"></script>
+ 	<!-- Viết code để khởi tạo slider -->
+ 	<script type="text/javascript">
+ 		$(document).ready(function() {
+ 			$('#my-slider').sliderPro();
+ 		});
+ 	</script>
+ </body>
+ </html>

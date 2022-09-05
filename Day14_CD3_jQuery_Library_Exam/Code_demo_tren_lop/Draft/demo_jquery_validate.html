@@ -1,0 +1,76 @@
+<!--
+	demo_jquery_validate.html
+	+ Là thư viện miễn phí, validate form theo kiểu realtime
+	+ Về bản chất, thư viện này sử dụng sự kiện keyup để xử lý
+	+ Thư viện cũng đc viết dựa trên thư viện jQuery
+	+ Cách cài đặt: tải thư viên về tại: jqueryvaliation.org
+	, nhúng file jquery.validate.min.js vào
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo jQuery Validate</title>
+</head>
+<body>
+<!-- Tích hợp jQuery -->
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<!-- Tích hợp jquery valiate -->
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+
+<form action="" method="post" id="form">
+	Nhập tên:
+	<input type="text" name="name" />
+	<br />
+	Nhập tuổi:
+	<input type="text" name="age" />
+	<br />
+	<input type="submit" value="Check Validate" />
+</form>
+<script type="text/javascript">
+	$(document).ready(function() {
+		// + Thư viện jQuery Validate sẽ validate input dựa vào thuộc tính name
+		// + Thư viện này sử dụng 2 thuộc tính sau để validate form:
+		// - rules: các quy tắc để validate, có thể tham khảo trong slide. VD: required - ko đc để trống, number - phải là số, minlength - ít nhất phải có độ dài bao nhiêu ký tự
+		// - messages: tùy biến message validate theo ý bạn
+		// + Thư viện này sẽ chỉ đc áp dụng với thẻ form
+		// CODE ...
+		// + Khởi tạo 1 đối tượng để sử dụng cho validate
+		var obj_validate = {
+			rules: {
+				//set rule cho input có name=name
+				name: {
+					//liệt kê các rule
+					required: true,
+					minlength: 3
+				},
+				age: {
+					number: true,
+					min: 2,
+					//required: true
+				}
+			},
+			//khai báo các message validate do bạn tự định nghĩa ra
+			messages: {
+				name: {
+					required: 'Phải nhập name',
+					minlength: 'Phải nhập ít nhất 3 ký tự'
+				},
+				age: {
+					number: 'Phải nhập số',
+					min: 'Phải nhập số >= 2'
+				}
+			},
+			//khai báo phương thức để thay đổi vị trí hiển thị của message validate
+			errorPlacement: function(error, element) {
+				//hiển thị vị trí message(error) phía dưới/sau input(element)
+				error.insertAfter(element);
+				//bao error bởi thẻ <div> với style là màu đỏ
+				error.wrap('<div style="color: red">');
+			}
+		};
+		// Áp dụng jquery validate cho form có id=form
+		$('#form').validate(obj_validate);
+	});
+</script>
+</body>
+</html>
