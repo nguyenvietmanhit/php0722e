@@ -89,6 +89,38 @@ category_id INT(11), # khóa ngoại, <tên-bảng-lk>_id
     #     (1, 'TV LG', 1500, 'Chi tiết tv lg'),
     #     (2, 'Iphone X', 1000, 'Chi tiết ipx'),
     #     (2, 'Ss note', 2000, 'Chi tiết ss note');
-    # b/ UPDATE: cập nhật bản ghi, cập nhật giá =
+    #
+    # b/ SELECT: Lấy dữ liệu ra
+    # - LẤy tất cả thông tin của tất cả sản phẩm:
+    SELECT * FROM products;
+    # - Lấy tên và giá của tất cả sp:
+    SELECT name,price FROM products;
+    # - LẤy tất cả thông tin của các sp có id < 3
+    SELECT * FROM products WHERE id < 3;
+    SELECT * FROM products WHERE id == 3 AND price = 1000;
+    # - Lấy 3 sản phẩm đầu tiên:
+    SELECT * FROM products LIMIT 3;
+    # - Lấy 3 sản phẩm tính từ sản phẩm thứ 2:
+    SELECT * FROM products LIMIT 2,3; # cách ưu tiên
+    SELECT * FROM products LIMIT 3 OFFSET 2;
+    # - Tìm sp có tên chứa chuỗi tv: % đại diện cho các ký tự bất kỳ
+    SELECT * FROM products WHERE name LIKE '%tv%';#tv sony, abctv, tv
+    # - LẤy tất cả sp theo thứ tự mới nhất -> cũ nhất:
+    # desc: decend: giảm dần
+    # asc: acsend: tăng dần
+    SELECT * FROM products ORDER BY created_at DESC;
+    # c / UPDATE: cập nhật dữ liệu
+    # Sửa tên sp = abc với sp có id = 1
+    # Luôn phải set điều kiện WHERE khi update, nếu ko update toàn bộ bảng!
+    UPDATE products SET name = 'abc' WHERE id = 1;
+    # d / DELETE: xóa dữ liệu
+    # Xóa sp có id > 10:
+    # Luôn phải set điều kiện WHERE khi delete, nếu ko delete toàn bộ bảng!
+    DELETE FROM products WHERE id > 10;
+
+    # 7 - Thao tác import , export CSDL
+    # Export CSDL: xuất file .sql
+    # Import CSDL: cần tạo database trước, sau đó mới import file
+    # .sql
 
 
