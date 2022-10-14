@@ -37,6 +37,18 @@ echo '<pre>';
 print_r($users);
 echo '</pre>';
 ?>
+<?php
+// - Hiển thị session flash:
+if (isset($_SESSION['error'])) {
+    echo $_SESSION['error'];
+    unset($_SESSION['error']);
+}
+if (isset($_SESSION['success'])) {
+    echo $_SESSION['success'];
+    unset($_SESSION['success']);
+}
+?>
+
 <a href="create.php">Thêm mới user</a>
 <h2>Danh sách user</h2>
 <table border="1" cellspacing="0" cellpadding="8">
