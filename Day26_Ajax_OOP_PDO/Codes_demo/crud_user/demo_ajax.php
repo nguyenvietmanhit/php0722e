@@ -34,7 +34,8 @@ link jquery cdn
                 },
                 // nơi nhận dữ liệu trả về từ PHP
                 success: function(data) {
-                    console.log(data);
+                    // console.log(data);
+                    $('#result').html(data);
                 }
             });
         })
