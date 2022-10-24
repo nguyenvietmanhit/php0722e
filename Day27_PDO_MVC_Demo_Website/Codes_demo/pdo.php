@@ -71,4 +71,38 @@ $deletes = [
 $is_delete = $obj_delete->execute($deletes);
 var_dump($is_delete);
 
+//pdo.php
+// 4 - Truy vấn SELECT:
+// + Select 1 bản ghi: lấy user có id = 1
+// B1: Viết truy vấn dạng tham số
+$sql_select_one = "SELECT * FROM users WHERE id=:id";
+// B2: Cbi obj truy vấn:
+$obj_select_one = $connection->prepare($sql_select_one);
+// B3: Tạo mảng truyền giá trị cho tham số trong câu truy vấn:
+$selects = [
+    ':id' => 1
+];
+//B4: Thực thi obj truy vấn: với SELECT ko cần quan tâm đến
+//kqua trả về sau khi thực thi như INSERT UPDATE DELETE
+$obj_select_one->execute($selects);
+//B5: Lấy mảng kết hợp:
+$user = $obj_select_one->fetch(PDO::FETCH_ASSOC);
+echo '<pre>';
+print_r($user);
+echo '</pre>';
+
+// + Select nhiều bản ghi: lấy tất cả user theo thứ tự mới nhất
+// B1: Viết truy vấn dạng tham số:
+$sql_select_all = "SELECT * FROM users ORDER BY created_at DESC";
+// B2: Cbi:
+$obj_select_all = $connection->prepare($sql_select_all);
+// B3: Tạo mảng -> bỏ qua vì câu truy vấn ko có tham số
+// B4: Thực thi
+$obj_select_all->execute();
+// B5: Lấy mảng kết hợp 2 chiều:
+$users = $obj_select_all->fetchAll(PDO::FETCH_ASSOC);
+echo '<pre>';
+print_r($users);
+echo '</pre>';
+
 
