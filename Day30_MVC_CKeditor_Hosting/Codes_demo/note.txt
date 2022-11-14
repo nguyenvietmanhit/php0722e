@@ -1,0 +1,38 @@
+note.txt
+1 - Tích hợp trình soạn thảo CKEditor và
+trình upload CKFinder
++ Giúp user thao tác dễ dàng hơn khi cần format nội dung
+- Các bước tích hợp:
++ CKEditor chỉ áp dụng cho textarea, ko áp dụng cho các input khác
++ Download thủ công ckeditor, đặt vào thư mục assets của mvc
++ Nhúng file ckeditor/ckeditor.js vào file layout main.php
++ Tích hợp vào textarea thông qua thuộc tính name
+2 - Tích hợp CKfinder vào hệ thống, vì mặc định CKEditor chỉ
+cho phép upload ảnh thông qua link online
++ CKFinder ko free -> crack, trong thư mục assets đã crack sẵn
+ckfinder
++ Check version PHP đang cài trên máy: XAMPP -> Shell -> php -v
+-> sử dụng thư mục ckfinder tương ứng trong assets
++ Đảm bảo ckfinder và ckeditor là cùng cấp thư mục
++ Nếu bị báo lỗi thư viện GD: XAMPP -> Apache -> Config ->
+php.ini, search .gd, bỏ comment và start lại Apache
+3 - Chức năng đăng ký user:
++ Bắt buộc phải có username và password
++ SQL: bảng users, truy vấn INSERT
++ Password lưu ntn vào bảng users?
+123456 -> 123456 ? ko bao giờ đc lưu pass dạng plain text vào
+CSDL, bắt buộc phải mã hóa trước khi lưu
+Một số thuật toán mã hóa cơ bản: md5 -> ko dùng vì dễ giải mã
+, nên dùng bcrypt để mã hóa
+4 - Code đăng ký:
++ Tạo cấu trúc sau:
+controllers/UserController.php
+models/User.php
+views/users/register.php
++ Chức năng cần dùng 1 layout riêng, copy file main.php ->
+layout_login.php, xóa toàn bộ nội dung trong body, chỉ để lại
+css và js
+
+5 - Đăng nhập:
++ Dựa vào thuật toán mã hóa của mật khẩu khi đăng ký để xử lý
+đăng nhập tương ứng

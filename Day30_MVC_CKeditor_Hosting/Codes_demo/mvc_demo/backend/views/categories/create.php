@@ -7,6 +7,10 @@
     Ảnh đại diện
     <input type="file" name="avatar" class="form-control" />
     <br/>
+    Nhập chi tiết danh mục:
+    <textarea name="description"></textarea>
+    <!--views/categories/create.php-->
+    <br>
     <input type="submit" name="submit" value="Lưu"
            class="btn btn-primary" />
 </form>

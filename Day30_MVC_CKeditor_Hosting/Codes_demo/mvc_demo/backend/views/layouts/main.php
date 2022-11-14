@@ -180,5 +180,20 @@ controller thành các giá trị động
 <script src="assets/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="assets/js/adminlte.min.js"></script>
+<!--Tích hợp CKEditor-->
+<!--<script src="assets/ckeditor/ckeditor.js"></script>-->
+<script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
+<!--Tích hợp vào textarea-->
+<script>
+    $(document).ready(function() {
+        // Tích hợp CKFinder vào CKEditor
+        CKEDITOR.replace('description' , {
+            //đường dẫn đến file ckfinder.html của ckfinder
+            filebrowserBrowseUrl: 'assets/ckfinder_php.8.x/ckfinder.html',
+            //đường dẫn đến file connector.php của ckfinder
+            filebrowserUploadUrl: 'assets/ckfinder_php.8.x/core/connector/php/connector.php?command=QuickUpload&type=Files'
+        });
+    })
+</script>
 </body>
 </html>
