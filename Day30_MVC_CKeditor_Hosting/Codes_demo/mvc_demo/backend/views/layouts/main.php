@@ -189,9 +189,9 @@ controller thành các giá trị động
         // Tích hợp CKFinder vào CKEditor
         CKEDITOR.replace('description' , {
             //đường dẫn đến file ckfinder.html của ckfinder
-            filebrowserBrowseUrl: 'assets/ckfinder_php.8.x/ckfinder.html',
+            filebrowserBrowseUrl: 'assets/ckfinder_php.7.x/ckfinder.html',
             //đường dẫn đến file connector.php của ckfinder
-            filebrowserUploadUrl: 'assets/ckfinder_php.8.x/core/connector/php/connector.php?command=QuickUpload&type=Files'
+            filebrowserUploadUrl: 'assets/ckfinder_php.7.x/core/connector/php/connector.php?command=QuickUpload&type=Files'
         });
     })
 </script>
